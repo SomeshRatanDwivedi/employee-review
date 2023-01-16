@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/css/_assign_work.css">
+
+<div class="work-parent">
+    <h3>Assign Recipient And Reviewer</h3>
+
+    <div class="card-parent">
+        <div class="card">
+            <div class="card-header">
+                <h3>Set Reviewers</h3>
+
+            </div>
+            <form action="/user/review/create-review" method="post">
+            <div class="card-body">
+                <label class="form-label">Recipient</label>
+                <select class="form-select" aria-label="Default select example"  name="reviewTo">
+                    <option selected>Click here</option>
+                    <%for(let i=0; i<employees.length; i++){%>
+                        <option value="<%=employees[i]._id%>"><%=employees[i].name%></option>
+                        <%}%>
+                </select>
+            </div>
+            <div class="card-body">
+                <label class="form-label">Reviewer</label>
+                <select class="form-select" aria-label="Default select example" name="reviewFrom">
+                    <option selected>Click here</option>
+                    <%for(let i=0; i<employees.length; i++){%>
+                        <option  value="<%=employees[i]._id%>"><%=employees[i].name%></option>
+                        <%}%>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-secondary submit-btn">Submit</button>
+        </form>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3>Make A New Admin</h3>
+            </div>
+            <form action="/user/admin/make-admin" method="post">
+            <div class="card-body">
+                <label class="form-label">Employees</label>
+                <select class="form-select" name="id" aria-label="Default select example">
+                    <option selected>Click here...</option>
+                    <%for(let i=0; i<employees.length; i++){%>
+                        <option   value="<%=employees[i]._id%>"><%=employees[i].name%></option>
+                        <%}%>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-secondary submit-btn">Submit</button>
+        </form>
+
+        </div>
+
+    </div>
+
+
+
+</div>

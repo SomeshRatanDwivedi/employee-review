@@ -1,0 +1,27 @@
+.work-parent{
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.card-parent{
+    width: 80%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.card{
+    width: 48%;
+    margin: 0;
+}
+
+.form-label{
+    float: left;
+}
+
+.submit-btn{
+    margin-right: 20px;
+    margin-bottom: 10px;
+}

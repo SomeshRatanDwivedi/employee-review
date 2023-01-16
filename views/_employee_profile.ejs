@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/css/_employee_profile.css">
+<%-include('_navbar',{ user:user });%>
+    <% if(page=='_employee_profile' && !locals.adminPage){%>
+        <div class="parent">
+            <div class="review-parent">
+                <div class="card-header">
+                    <h3>Review To -:</h3>
+                </div>
+                <%for(let review of user.reviewTo){%>
+                    <%if(!review.content){%>
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="/user/review/update-review/<%=review._id%>" method="post">
+                                    <label class="form-label">To: <%=review.reviewTo%></label>
+                                    <textarea type="text" name="content" autocomplete="off" id="form3Example1c"
+                                        class="form-control"></textarea>
+                                    <button type="submit" class="btn btn-secondary submit-btn">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+                        <%}%>
+                            <%}%>
+            </div>
+            <div class="review-parent">
+                <div class="card-header">
+                    <h3>Reviews</h3>
+
+                </div>
+                <%for(let review of user.reviewFrom){%>
+                    <%if(review.content){%>
+                        <div class="card">
+                            <p><span> From:</span>
+                                <%=review.reviewFrom%>
+                            </p>
+                            <p> <span>Review:</span>
+                                <%=review.content%>
+                            </p>
+
+                        </div>
+                        <%}%>
+                            <%}%>
+
+            </div>
+        </div>
+        <%}%>
+            <div>
+
+                <%if(locals.adminPage && adminPage=='_assign_work' ){%>
+                    <%-include('_assign_work');%>
+                        <%}%>
+            </div>
+            <div>
+
+                <%if(locals.adminPage && adminPage=='_show_all_employees' ){%>
+                    <%-include('_show_all_employees');%>
+
+                        <%}%>
+            </div>
+            <div>
+
+                <%if(locals.adminPage && adminPage=='_admin_register' ){%>
+                    <%-include('_admin_register');%>
+
+                        <%}%>
+            </div>
+
+            <div>
+
+                <%if(locals.adminPage && adminPage=='_update_user' ){%>
+                    <%-include('_update_user');%>
+
+                        <%}%>
+            </div>

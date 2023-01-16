@@ -1,0 +1,48 @@
+.parent{
+    display: flex;
+    justify-content: space-evenly;
+    height: calc(100vh - 68px);
+    padding: 20px;
+}
+
+.review-parent{
+    width: 40%;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+.card{
+    width: 90%;
+    margin: 10px auto;
+
+}
+.card-header{
+    background-color: cadetblue;
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+.submit-btn{
+    margin-top: 10px;
+    float: right;
+}
+
+.card p{
+    padding: 5px;
+    margin: 0;
+}
+
+
+.card p span{
+    color: rgb(37, 93, 93);
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+
