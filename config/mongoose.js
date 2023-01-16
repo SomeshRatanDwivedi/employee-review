@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
+const env=require('./environment')
 mongoose.set('strictQuery', false)
-mongoose.connect("mongodb://localhost/employee-review");
+mongoose.connect(env.db);
 const db=mongoose.connection;
 db.on('error', console.error.bind(console, "error in connecting db"));
 

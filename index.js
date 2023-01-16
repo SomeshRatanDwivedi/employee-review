@@ -1,5 +1,6 @@
 const express=require('express');
 const PORT=8000;
+const env=require('./config/environment')
 const cookieParser=require('cookie-parser')
 const bodyParser=require('body-parser')
 const ejsLayouts=require('express-ejs-layouts');
@@ -26,7 +27,7 @@ app.use(session({
     secret: 'somesh',
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: 'mongodb://localhost/employee-review',
+    store: MongoStore.create({ mongoUrl: env.db,
     autoRemove:'disabled'
     
   }, (err)=>{
